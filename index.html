@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <style>
+        body {
+             background: #282828;
+             height: 100vh;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+        }
+        .container {
+            position: relative;
+            width: 15rem;
+            height: 15rem;
+            background: #282828;
+            
+            div:nth-child(1){
+                 position: absolute;
+                 top: 0%;
+                 width: 100%;
+                 height: 100%;
+                 max-width: 100%;
+                 max-height: 100%;
+                 transition: transform 2s 0s;
+                 > img {
+                       width: 100%;
+                       height: 100%;
+                       object-fit: cover;
+                       filter: drop-shadow(2px 9px 6px black);
+                       transition: filter 0.5s 0s;
+                       border-radius: 5%;
+                 }
+            }
+            div:nth-child(2){
+                 position: absolute;
+                 top: 0%;
+                 width: 100%;
+                 height: 100%;
+                 max-width: 100%;
+                 max-height: 100%;
+                 img {
+                       width: 100%;
+                       height: 100%;
+                       object-fit: cover;
+                       transition: filter 0.5s 0.2s;
+                       border-radius: 5%;
+                       background: linear-gradient(to bottom, transparent 41%, black 53%);
+                       background-repeat: no-repeat;
+                       background-size: 12%;
+                       background-position: center; 
+                       opacity: 0;
+                       transform: translateX(0%, 20px);
+                       transition:opacity 1.5s 0.5s , transform 2s 0s ;
+                       filter: drop-shadow(2px 4px 0px black);                 
+                    }
+            }
+        }
+        .container:is(:hover) {
+
+            >div:nth-child(1) {
+               transform: perspective(600px) rotateX(60deg);
+               > img {
+                  filter: drop-shadow(2px 16px 6px black) grayscale(90%) ;
+               }
+            }
+            >div:nth-child(2) {
+               > img {
+                  opacity: 1;
+                  transform: translate(0px, -60px);
+               }
+            }
+             
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+             <div class="model-image">
+                   <img src="/model.jpg" alt="" srcset="" loading="lazy">  
+             </div>
+             <div class="model-animation">
+                  <img src="/model.gif" alt="" srcset="">    
+             </div>
+      </div>
+  </body>
+</html>
