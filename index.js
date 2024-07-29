@@ -1,21 +1,13 @@
-console.log('we added a js file')
+// type User<T> = T extends {name: string} ? () => T : never;
 
-class Person {
+// type m = {name: string};
 
-    constructor(name){
-      this.name = name;
-    }
+// type worker = User<m>
 
-    greet(){
-       console.log(this.name)
-    }
-}
-// function Person(name){
-//      this.name = name;
-// }
-// Person.prototype.greet = function(){
-//     console.log(this.name+" is user")
+// function displaying(): worker {
+//     return function () {
+//         return {name: 'user'}
+//     }
 // }
 
-const person = new Person('omar')
-console.log(Object.getPrototypeOf(person), Person.prototype)  // this returns { greet: [Function (anonymous)] }
+// typescript to use in the public function
