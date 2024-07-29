@@ -11,3 +11,4 @@
 // }
 
 // typescript to use in the public function
+// now get the updated version from github
